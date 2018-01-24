@@ -1,0 +1,50 @@
+{
+  "name": "wp-directory",
+  "version": "1.0.0",
+  "description": "Imports data from Colby's directory, saves it in the WordPress database, and makes it available from REST endpoints.",
+  "main": "src/js/index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "start": "webpack -w",
+    "build": "webpack -p",
+    "lint": "eslint src/js",
+    "stylelint": "stylelint src/css/*.css --fix",
+    "prepare": "npm run build"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "php demo/index.php > demo/index.html && npm run lint && npm run stylelint",
+      "pre-push": "npm run prepare"
+    }
+  },
+  "author": "John Watkins <john.watkins@colby.edu>",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^7.2.5",
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "css-loader": "^0.28.9",
+    "cssnano": "^3.10.0",
+    "eslint": "^4.14.0",
+    "eslint-config-fbjs": "^2.0.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-babel": "^4.1.2",
+    "eslint-plugin-flowtype": "^2.40.1",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.5.1",
+    "eslint-plugin-relay": "^0.0.20",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "husky": "^0.14.3",
+    "node-autodeploy-wp": "^1.0.20",
+    "postcss-loader": "^2.0.10",
+    "style-loader": "^0.19.1",
+    "stylelint": "^8.4.0",
+    "stylelint-config-standard": "^18.0.0",
+    "stylelint-order": "^0.8.0",
+    "webpack": "^3.10.0"
+  }
+}

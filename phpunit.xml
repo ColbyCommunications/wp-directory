@@ -1,0 +1,7 @@
+<phpunit bootstrap="tests/bootstrap.php">
+  <testsuites>
+    <testsuite name="wp-directory">
+      <directory>tests</directory>
+    </testsuite>
+  </testsuites>
+</phpunit>
